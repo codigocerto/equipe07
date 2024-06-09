@@ -1,4 +1,4 @@
-# CodigoCerto - Equipe 07
+# CodigoCerto - Equipe07
 
 Este repositório é destinado ao desenvolvimento de uma landing page para o projeto **Código Certo**. O projeto inclui desenvolvimento de front-end em HTML/CSS e JavaScript, back-end em Node.js, e banco de dados em PostgreSQL.
 
@@ -18,7 +18,7 @@ Criar uma landing page que apresente o projeto Código Certo, com informações 
 ## Estrutura do Projeto
 
 ```bash
-equipe7/
+equipe07/
 ├── .github/
 │   └── workflows/
 │       └── ci.yml       # Configuração do GitHub Actions
