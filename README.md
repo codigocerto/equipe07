@@ -13,7 +13,7 @@ Criar uma landing page que apresente o projeto Código Certo, com informações 
 - **Banco de Dados:** PostgreSQL, Sequelize ORM
 - **Controle de Versão:** Git
 - **Gerenciamento de Dependências:** npm
-- **Ferramentas de Design UX/UI:** Figma, Adobe XD
+- **Ferramentas de Design UX/UI:** Figma
 
 ## Estrutura do Projeto
 
