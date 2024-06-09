@@ -15,7 +15,7 @@ Criar uma landing page que apresente o projeto Código Certo, com informações 
 ## Estrutura do Projeto
 
 ```bash
-equipe7/
+equipe07/
 ├── .github/
 │   └── workflows/
 │       └── ci.yml       # Configuração do GitHub Actions
