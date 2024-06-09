@@ -6,7 +6,7 @@ Este repositório é destinado ao desenvolvimento de uma landing page para o pro
 
 Criar uma landing page que apresente o projeto Código Certo, com informações atrativas e uma interface amigável. A página deve permitir interação básica com o back-end para coleta e exibição de dados dinâmicos.
 
-## Tecnologias Utilizadas
+## Tecnologias utilizadas
 
 - **Front-end:** HTML, CSS, JavaScript, Bootstrap
 - **Back-end:** Node.js, Express.js
@@ -14,9 +14,9 @@ Criar uma landing page que apresente o projeto Código Certo, com informações 
 - **Controle de Versão:** Git
 - **Gerenciamento de Dependências:** npm
 - **Ferramentas de Design UX/UI:** Figma
-- **QA (Controle de Qualidade):** Testes automatizados com Jest e Cypress
+- **QA (Controle de Qualidade):** Jest, Cypress
 
-## Estrutura do Projeto
+## Estrutura do projeto
 
 ```bash
 equipe07/
@@ -43,7 +43,7 @@ equipe07/
 ├── .gitignore
 ├── README.md            # Documentação do projeto, Instruções para contribuição e Convenção de branches
 ```
-## Configuração do Ambiente de Desenvolvimento
+## Configuração do ambiente de desenvolvimento
 ### Requisitos
 - Git: Controle de versão
 - Node.js: (v14 ou superior) - Plataforma de execução - JavaScript
