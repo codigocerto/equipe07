@@ -37,8 +37,7 @@ equipe07/
 │   ├── schema.sql       # Esquema do banco de dados
 │   └── seed.sql         # Dados iniciais
 ├── .gitignore
-├── README.md            # Documentação do projeto
-└── CONTRIBUTING.md      # Convenções e instruções para contribuição
+├── README.md            # Documentação do projeto, Convenções e instruções para contribuição
 ```
 ## Configuração do Ambiente de Desenvolvimento
 ### Requisitos
