@@ -14,6 +14,7 @@ Criar uma landing page que apresente o projeto Código Certo, com informações 
 - **Controle de Versão:** Git
 - **Gerenciamento de Dependências:** npm
 - **Ferramentas de Design UX/UI:** Figma
+- **QA (Controle de Qualidade):** Testes automatizados com Jest e Cypress
 
 ## Estrutura do Projeto
 
@@ -36,8 +37,11 @@ equipe07/
 ├── database/
 │   ├── schema.sql       # Esquema do banco de dados
 │   └── seed.sql         # Dados iniciais
+├── qa/
+│   ├── tests/           # Testes automatizados
+│   └── README.md        # Instruções para execução de testes
 ├── .gitignore
-├── README.md            # Documentação do projeto, Convenções e instruções para contribuição
+├── README.md            # Documentação do projeto, Instruções para contribuição e Convenção de branches
 ```
 ## Configuração do Ambiente de Desenvolvimento
 ### Requisitos
@@ -98,4 +102,5 @@ Estrutura de Branches
 - **`feature/nome-da-feature`:** Para novas funcionalidades.
 - **`bugfix/nome-do-bug`:** Para correções de bugs.
 - **`release/vX.X`:** Para preparação de lançamentos.
+- **`qa/[nome-do-teste]`:** Branch para desenvolvimento e execução de testes automatizados.
 
