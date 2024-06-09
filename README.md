@@ -87,7 +87,7 @@ Sempre trabalhe na branch de desenvolvimento (develop) e crie sub-branches para 
 Cada equipe deve seguir o fluxo de trabalho definido acima e as seguintes convenções de branches:
 
 ```bash
-## Estrutura de Branches
+Estrutura de Branches
 
 - **`main`:** Código estável e pronto para produção.
 - **`develop`:** Integração contínua de desenvolvimento.
