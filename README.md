@@ -54,7 +54,7 @@ equipe07/
 ```bash
 # Fork do repositório e clone
 git clone https://github.com/seu-usuario/equipe07.git
-cd equipe7
+cd equipe07
 
 # Configurar upstream
 git remote add upstream https://github.com/codigocerto/equipe07.git
