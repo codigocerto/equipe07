@@ -54,16 +54,15 @@ equipe07/
 ```bash
 # Fork do repositório e clone
 git clone https://github.com/seu-usuario/equipe07.git
-cd equipe7
+cd equipe07
 
 # Configurar upstream
 git remote add upstream https://github.com/codigocerto/equipe07.git
 
 # Sincronizar com develop
 git fetch upstream
-git checkout develop
-git merge upstream/develop
-git push origin develop
+git checkout -b develop --track upstream/develop
+git pull upstream develop
 
 # Criar e configurar branches
 git checkout develop
@@ -71,12 +70,12 @@ git checkout -b uxui   # ou frontend, backend, database, qa
 
 # Trabalhar em uma feature
 git checkout uxui     # ou frontend, backend, database, qa
-git checkout -b uxui/feature/nome-da-feature
+git checkout -b feature/uxui-nome-da-feature
 
 # Implementar mudanças
 git add .
 git commit -m "Descrição clara do que foi feito"
-git push origin uxui/feature/nome-da-feature
+git push origin feature/uxui-nome-da-feature
 
 # Criar um Pull Request para a branch
 1. Vá para o repositório forkado no GitHub.
@@ -85,7 +84,7 @@ git push origin uxui/feature/nome-da-feature
 
 # manter o fork sincronizado
 Sincronize seu fork regularmente para evitar conflitos.
-Sempre trabalhe na branch de desenvolvimento (develop) e crie sub-branches para features específicas.
+Sempre trabalhe na branch de desenvolvimento (develop, backend, frontend...) e crie sub-branches para features específicas.
 ```
 ## Convenção de branches
 Cada equipe deve seguir o fluxo de trabalho definido acima e as seguintes convenções de branches:
@@ -99,8 +98,7 @@ Estrutura de Branches
 - **`frontend`:** Desenvolvimento do front-end.
 - **`backend`:** Desenvolvimento do back-end.
 - **`database`:** Gerenciamento do banco de dados.
-- **`feature/nome-da-feature`:** Para novas funcionalidades.
+- **`feature/frontend-nome-da-feature`:** Para novas funcionalidades. # feature/nome da stack-nome da feature
 - **`bugfix/nome-do-bug`:** Para correções de bugs.
 - **`release/vX.X`:** Para preparação de lançamentos.
 - **`qa/[nome-do-teste]`:** Branch para desenvolvimento e execução de testes automatizados.
-
