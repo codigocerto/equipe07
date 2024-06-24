@@ -1,0 +1,146 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+body {
+    font-family: Montserrat, sans-serif;
+    color: #fff;
+    background-color: #000000;
+    margin: 0;
+    padding: 0;
+}
+
+/* Estilização Navbar */
+nav {
+    display: flex;
+    justify-content: space-between; 
+    align-items: center;
+    color: #fff;
+    padding: 1rem 3rem;
+    height: 68px;
+    position: relative;
+}
+
+nav .logo {
+    width: 114px;
+    height: 68px;
+}
+
+nav .nav-links {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+nav .nav-links li {
+    margin-left: 1.5rem;
+}
+
+nav .nav-links li a {
+    color: #fff; 
+    text-decoration: none;
+    font-size: 1rem;
+    line-height: 68px; 
+    padding: 0.5rem 1rem;
+    transition: background-color 0.3s, color 0.3s, border-radius 0.3s;
+    width: 112px;
+    height: 46px;
+}
+
+nav .nav-links li a:hover {
+    background-color: #E53939; 
+    color: #fff;
+    border-radius: 5px;
+}
+
+.checkbox {
+    opacity: 0;
+    position: absolute;
+}
+
+.label {
+    background-color: white;
+    border-radius: 50px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+    height: 70px;
+    width: 151px;
+    overflow: hidden;
+}
+
+.label img {
+    height: 40.33px;
+    width: 40.33px;
+}
+
+.label .sun {
+    margin-left: 8px; 
+}
+
+.label .moon {
+    margin-right: 8px;
+}
+
+.label .ball {
+    background-color: #E53939;
+    border-radius: 50%;
+    position: absolute;
+    top: 8px;
+    right: 8px; 
+    height: 54px;
+    width: 54px;
+    transform: translateX(0);
+    transition: transform 0.2s linear;
+}
+
+.checkbox:checked + .label .ball {
+    transform: translateX(-85px); 
+}
+
+/* Media Queries para Design Responsivo */
+
+/* Tablet */
+@media (max-width: 768px) {
+    nav {
+        flex-direction: column;
+        height: auto;
+        align-items: center; 
+    }
+
+    nav .logo {
+        margin-bottom: 1rem; 
+    }
+
+    nav .nav-links {
+        flex-direction: column;
+        align-items: center; 
+    }
+
+    nav .nav-links li {
+        margin: 0.5rem 0;
+    }
+
+    nav .action-btn {
+        margin-top: 1rem; 
+    }
+}
+
+/* Mobile */
+@media (max-width: 480px) {
+    nav .nav-links li {
+        margin: 0.5rem 0;
+    }
+
+    nav .nav-links li a {
+        font-size: 0.9rem;
+    }
+}
+
+section {
+    padding: 2rem;
+}
+
+
+/* Fim da Navbar*/
