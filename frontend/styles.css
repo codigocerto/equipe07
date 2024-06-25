@@ -92,14 +92,14 @@ nav .nav-links li a:hover {
     border-radius: 50%;
     position: absolute;
     top: 8px;
-    right: 8px; /* Posição inicial sobre a lua */
+    right: 8px; 
     height: 54px;
     width: 54px;
     transition: transform 0.2s linear;
 }
 
 .checkbox:checked + .label .ball {
-    transform: translateX(-77px); /* Movimento para cobrir o sol */
+    transform: translateX(-77px); 
 }
 
 /* Media Queries para Design Responsivo */
