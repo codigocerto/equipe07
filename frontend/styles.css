@@ -66,21 +66,25 @@ nav .nav-links li a:hover {
     justify-content: space-between;
     position: relative;
     height: 70px;
-    width: 151px;
+    width: 148px;
+    padding: 14px;
     overflow: hidden;
+    box-sizing: border-box;
 }
 
 .label img {
-    height: 40.33px;
-    width: 40.33px;
+    height: 40px;
+    width: 40px;
 }
 
-.label .sun {
-    margin-left: 8px; 
+.label .sun,
+.label .moon {
+    flex-shrink: 0;
 }
 
 .label .moon {
-    margin-right: 8px;
+    height: 44px;
+    width: 44px;
 }
 
 .label .ball {
@@ -88,15 +92,14 @@ nav .nav-links li a:hover {
     border-radius: 50%;
     position: absolute;
     top: 8px;
-    right: 8px; 
+    right: 8px; /* Posição inicial sobre a lua */
     height: 54px;
     width: 54px;
-    transform: translateX(0);
     transition: transform 0.2s linear;
 }
 
 .checkbox:checked + .label .ball {
-    transform: translateX(-85px); 
+    transform: translateX(-77px); /* Movimento para cobrir o sol */
 }
 
 /* Media Queries para Design Responsivo */
@@ -141,6 +144,3 @@ nav .nav-links li a:hover {
 section {
     padding: 2rem;
 }
-
-
-/* Fim da Navbar*/
