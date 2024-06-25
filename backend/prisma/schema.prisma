@@ -6,3 +6,30 @@ datasource db {
   provider = "postgresql"
   url      = env("DATABASE_URL")
 }
+
+model Candidate {
+  id        BigInt       @id @default(autoincrement())
+  name      String       
+  email     String       @unique
+  phone     String       @db.VarChar(11)
+  technologies Technologies[]
+  isSignIn  Boolean
+  createdAt DateTime     @default(now())
+}
+
+model Technologies {
+  id          BigInt     @id @default(autoincrement())
+  candidate   Candidate  @relation(fields: [candidateId], references: [id])
+  candidateId BigInt
+  name        String     @unique
+  level       Level?
+
+  @@index([candidateId])
+}
+
+model Level {
+  id            BigInt         @id @default(autoincrement())
+  technology    Technologies   @relation(fields: [technologyId], references: [id])
+  technologyId  BigInt         @unique
+  level         String         
+}
