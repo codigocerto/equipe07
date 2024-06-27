@@ -66,10 +66,8 @@ git pull upstream develop
 
 # Criar e configurar branches
 git checkout develop
-git checkout -b uxui   # ou frontend, backend, database, qa
 
 # Trabalhar em uma feature
-git checkout uxui     # ou frontend, backend, database, qa
 git checkout -b feature/uxui-nome-da-feature
 
 # Implementar mudanças
@@ -80,11 +78,11 @@ git push origin feature/uxui-nome-da-feature
 # Criar um Pull Request para a branch
 1. Vá para o repositório forkado no GitHub.
 2. Clique em Compare & pull request.
-3. Preencha a descrição para o pull request e crie o PR para a sua branch (frontend, backend, database ...) no repositório principal.
+3. Preencha a descrição para o pull request e crie o PR para a branch develop no repositório principal.
 
 # manter o fork sincronizado
 Sincronize seu fork regularmente para evitar conflitos.
-Sempre trabalhe na branch de desenvolvimento (develop, backend, frontend...) e crie sub-branches para features específicas.
+Sempre trabalhe na branch de desenvolvimento (develop) e crie sub-branches para features específicas.
 ```
 ## Convenção de branches
 Cada equipe deve seguir o fluxo de trabalho definido acima e as seguintes convenções de branches:
@@ -102,3 +100,26 @@ Estrutura de Branches
 - **`bugfix/nome-do-bug`:** Para correções de bugs.
 - **`release/vX.X`:** Para preparação de lançamentos.
 - **`qa/[nome-do-teste]`:** Branch para desenvolvimento e execução de testes automatizados.
+```
+
+## Criação e uso de Container Docker
+
+### Passos para criar e executar o container
+1. **Navegar até o diretório contendo o Dockerfile**
+```bash
+cd /caminho/para/o/projeto
+cd /caminho/para/o/diretório/da/stack
+```
+2. **Construir a imagem Docker**
+```bash
+docker build -t nome-da-imagem . # o ponto no final é necessáro - indica onde estão os arquivos para a contrução da imagem
+````
+3. **Executar o container**
+````bash
+docker run -d -p 8080:80 nome-da-imagem # exemplo para nginx, mapeando a porta do container (80) para a porta 8080 do host local
+````
+4. **Parar e remover o container**
+````bash
+docker stop nome-do-container
+docker rm nome-do-container
+
