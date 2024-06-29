@@ -92,14 +92,14 @@ nav .nav-links li a:hover {
     border-radius: 50%;
     position: absolute;
     top: 8px;
-    right: 8px; /* Posição inicial sobre a lua */
+    right: 8px; 
     height: 54px;
     width: 54px;
     transition: transform 0.2s linear;
 }
 
 .checkbox:checked + .label .ball {
-    transform: translateX(-77px); /* Movimento para cobrir o sol */
+    transform: translateX(-77px); 
 }
 
 /* Media Queries para Design Responsivo */
@@ -144,3 +144,69 @@ nav .nav-links li a:hover {
 section {
     padding: 2rem;
 }
+
+
+/* Footer */
+footer {
+    display: flex;
+    justify-content: space-between;
+    padding: 2rem 3rem;
+    color: #fff;
+}
+
+.footer-left, .footer-right {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.footer-logo {
+    width: 212px;
+    height: 122px;
+    margin-bottom: 0rem;
+}
+
+.footer-left p {
+    font-size: 14px;
+    font-weight: 600; 
+    margin-top: 0.2rem; 
+}
+
+
+.footer-right {
+    align-items: center;
+}
+
+.footer-right p {
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+.social-icons {
+    padding-top: 24px;
+    display: flex;
+    gap: 1rem;
+}
+
+.social-icon {
+    cursor: pointer;
+}
+
+.social-icons img[alt="LinkedIn"] {
+    width: 50px;
+    height: 50px;
+}
+
+.social-icons img[alt="Discord"] {
+    width: 60px;
+    height: 50px;
+}
+
+.social-icons img[alt="GitHub"] {
+    width: 50px;
+    height: 50px;
+}
+
+
+
