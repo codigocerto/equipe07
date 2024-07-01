@@ -1,0 +1,121 @@
+/* incuir apenas detalhes do carrosel - ignorar alteracoes gerais  */
+
+
+  .conteiner {
+    background-image: url("../frontend/assets/background-carrosel.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 2rem;
+  }
+  
+  /* carrosel e avatares */
+  
+  .linha{
+    margin-top: 5rem;
+    display: flex;
+  }
+  
+  .depoimento-colaborador {
+    font-size: 10px;
+    margin-left: 10rem;
+  }
+  
+  .esquerda {
+    width: 40%;
+    margin-top: 3rem;
+  }
+  
+  .direita {
+    width: 60%;
+  }
+  
+  .avatar {
+    display: inline-block;
+    border-radius: 50%;
+    overflow: hidden;
+    width: 69px;
+    border: 2px solid #000000;
+    margin-left: 7rem;
+  }
+  
+  .avatar:not(:first-child) {
+    margin-left: -20px;
+    -webkit-mask: radial-gradient(circle 55px at 5px 50%, #ffff 99%, #ffff 100%);
+    mask: radial-gradient(circle 55px at 5px 50%, #ffff 99%, #ffff 100%);
+  }
+  
+  .avatar img {
+    width: 100%;
+    display: block;
+  }
+  
+  .titulo-central {
+    margin-top: 1rem;
+    font-size: 7.2rem; /* 72 pix */
+    text-align: center;
+  }
+  
+  /* card */
+  
+  .card-externo {
+    transform: skew(-9deg);
+    border-radius: 10px;
+    padding: 10px;
+    margin: 0 10px;
+  }
+  
+  .card {
+    display: flex;
+    align-items: center;
+    padding: 25px;
+    background-color: rgba(255, 255, 255, 0.1); /* aplica transparencia*/
+  }
+  
+  .d-flex {
+    padding: 5px;
+  }
+  
+  .card-body {
+    flex: 1;
+    margin-left: 5px;
+  }
+  
+  .card-img-left {
+    width: 15%;
+    height: 15%;
+    border-radius: 50%;
+    margin-top: 6rem;
+  }
+  
+  .card-titulo {
+    margin-bottom: 2rem;
+  }
+  
+  .card-text {
+    width: 100%;
+    color: #ffffff;
+  }
+  
+  .nome-pessoa {
+    background-color: rgba(255, 255, 255, 0.1);
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+    color: #ffffff;
+  }
+  
+  .funcao-pessoa {
+    background-color: var(--cor-primaria);
+    color: #000000;
+    padding: 0.5rem;
+    border-radius: 10px;
+    font-weight: bold;
+  }
+  
+  /* final card */
+  

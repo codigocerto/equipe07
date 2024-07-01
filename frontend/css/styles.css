@@ -1,5 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 
+/* 1 rem = 10 px / ajuda na responsividade / o padrao do chrome é 16px estamso pegando 62,5% dele e atribuido a toda a tela  */
+html {
+    font-size: 62.5%; 
+  }
+  
+
 body {
     font-family: Montserrat, sans-serif;
     color: #fff;
