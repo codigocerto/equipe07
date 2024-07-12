@@ -151,6 +151,60 @@ section {
     padding: 2rem;
 }
 
+section .iniciativas {
+ display: flex;
+ flex-direction: column;
+ justify-content: center;
+}
+
+.iniciativas .titulo {
+    font-family: Montserrat;
+    font-size: 72px;
+    font-weight: 700;
+    line-height: 87.77px;
+    text-align: center;
+}
+
+.titulo strong {
+    color: red;
+}
+
+.iniciativas .group-buttons {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+
+}
+
+.button1 {
+    width: 200px;
+    text-align: center;
+    height: 65px;
+    top: 280px;
+    left: 390px;
+    padding: 22px 19px 21px 20px;
+    gap: 0px;
+    border-radius: 40px 40px 40px 40px;
+    font-family: Montserrat;
+    font-size: 18px;
+    font-weight: 700;
+    opacity: 0px;
+    background: #E53939;
+    border: 1px solid #E53939
+    box-shadow: 0px 0px 25px 0px #E5393940;
+}
+
+.button2 {
+   display: flex;
+   flex-direction: row;
+}
+
+
+section .iniciativas-estatísticas {
+/* background: red; */
+}
+
 
 /* Footer */
 footer {
