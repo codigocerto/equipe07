@@ -1,36 +1,86 @@
-import { Controller, Get, Post, Body, Param, Delete, Query } from '@nestjs/common';
+import {
+  Controller,
+  Get,
+  Post,
+  Body,
+  Param,
+  Delete,
+  Query,
+  ConflictException,
+  HttpStatus,
+  Res,
+  NotFoundException,
+} from '@nestjs/common';
 import { CandidateService } from './candidate.service';
 import { CreateCandidateDto } from './dto/create-candidate.dto';
+import { Response } from 'express';
 
 @Controller('candidates')
 export class CandidateController {
   constructor(private readonly candidateService: CandidateService) {}
 
   @Post()
-  create(@Body() createCandidateDto: CreateCandidateDto) {
-    return this.candidateService.create(createCandidateDto);
+  async create(
+    @Res() response: Response,
+    @Body() createCandidateDto: CreateCandidateDto,
+  ): Promise<Response> {
+    const alreadyCandidate = await this.candidateService.findOneByEmail(
+      createCandidateDto.email,
+    );
+    if (alreadyCandidate) {
+      throw new ConflictException('The email already exists!');
+    }
+    const user = await this.candidateService.create(createCandidateDto);
+    return response.status(HttpStatus.CREATED).json(user);
   }
 
   @Get()
-  findAll() {
-    return this.candidateService.findAll();
-  }
+  async findAll(
+    @Res() response: Response,
+    @Query('email') email?: string,
+  ): Promise<Response> {
+    if (email) {
+      const candidate = await this.candidateService.findOneByEmail(email);
 
-  @Get('/by-id/:id')
-  findOneById(@Param('id') id: string) {
-    if (isNaN(+id)) {
-      throw new RangeError('The id is not a valid number');
+      if (!candidate) {
+        throw new NotFoundException(`Candidato com ${email} não encontrado!`);
+      }
+
+      return response.status(HttpStatus.ACCEPTED).json(candidate);
     }
-    return this.candidateService.findOneById(+id);
+
+    const allCandidates = await this.candidateService.findAllCandidates();
+
+    return response.status(HttpStatus.OK).json(allCandidates);
   }
 
-  @Get('/by-email')
-  findOneByEmail(@Query('email') email: string) {
-    return this.candidateService.findOneByEmail(email);
+  @Get(':id')
+  async findById(
+    @Res() response: Response,
+    @Param('id') id: string,
+  ): Promise<Response> {
+    const candidate = await this.candidateService.findOneById(id);
+
+    if (!candidate) {
+      throw new NotFoundException(`Candidato com ${id} não encontrado!`);
+    }
+
+    return response.status(HttpStatus.OK).json(candidate);
   }
 
-  @Delete('/:id')
-  remove(@Param('id') id: string) {
-    return this.candidateService.remove(+id);
+  @Delete(':id')
+  async remove(
+    @Res() response: Response,
+    @Param('id') id: string,
+  ): Promise<Response> {
+    const candidate = await this.candidateService.findOneById(id);
+
+    if (!candidate) {
+      throw new NotFoundException(`Candidato com ${id} não encontrado!`);
+    }
+
+    await this.candidateService.removeCandidate(id);
+
+    return response.status(HttpStatus.NO_CONTENT).send();
   }
 }

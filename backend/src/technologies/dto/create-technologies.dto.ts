@@ -1,10 +1,11 @@
-import { IsInt, IsString } from 'class-validator';
+import { IsEnum, IsNotEmpty, IsString } from 'class-validator';
+import { Level } from '@prisma/client';
 
 export class CreateTechnologiesDto {
   @IsString()
+  @IsNotEmpty()
   name: string;
-  @IsInt()
-  candidateId: bigint;
-  @IsString()
-  level: string;
+
+  @IsEnum(Level)
+  level: Level;
 }

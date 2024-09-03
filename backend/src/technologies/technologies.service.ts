@@ -16,11 +16,11 @@ export class TechnologiesService {
     return this.technologiesRepository.findAll();
   }
 
-  findOne(id: bigint) {
+  findOne(id: string) {
     return this.technologiesRepository.findOne(id);
   }
 
-  remove(id: bigint) {
+  remove(id: string) {
     return this.technologiesRepository.remove(id);
   }
 }
