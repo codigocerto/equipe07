@@ -1,7 +1,7 @@
-import { Technologies } from '@prisma/client';
+import { Level, Technologies } from '@prisma/client';
 
 export class TechnologiesEntity implements Technologies {
-  id: bigint;
-  candidateId: bigint;
+  id: string;
   name: string;
+  level: Level;
 }

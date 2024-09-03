@@ -7,52 +7,26 @@ import { ResponseTechnologiesDto } from '../dto/response.getTechnologies.dto';
 export class TechnologiesRepository {
   constructor(private readonly prisma: PrismaService) {}
 
-  async create(
-    createTechnologiesDto: CreateTechnologiesDto,
-  ): Promise<ResponseTechnologiesDto> {
-    return this.prisma.technologies.create({
-      data: {
-        name: createTechnologiesDto.name,
-        candidate: {
-          connect: {
-            id: createTechnologiesDto.candidateId,
-          },
-        },
-        level: {
-          create: { level: createTechnologiesDto.level },
-        },
+  async create(createTechnologyDto: CreateTechnologiesDto) {
+    return this.prisma.technologies.upsert({
+      where: { name: createTechnologyDto.name },
+      update: { level: createTechnologyDto.level },
+      create: {
+        name: createTechnologyDto.name,
+        level: createTechnologyDto.level,
       },
     });
   }
 
   async findAll(): Promise<ResponseTechnologiesDto[]> {
-    const technolgies = await this.prisma.technologies.findMany({
-      include: {
-        candidate: true,
-        level: true,
-      },
-    });
-
-    return technolgies.map((technology) => {
-      return new ResponseTechnologiesDto(technology.name);
-    });
+    return;
   }
-  async findOne(id: bigint): Promise<ResponseTechnologiesDto> {
-    const technology = await this.prisma.technologies.findUnique({
-      where: { id },
-      include: {
-        candidate: true,
-        level: true,
-      },
-    });
-    if (!technology) {
-      throw new Error(`Technology with id ${id} not found.`);
-    }
-    return new ResponseTechnologiesDto(technology.name);
+  async findOne(id: string): Promise<ResponseTechnologiesDto> {
+    return;
   }
-  async remove(id: bigint) {
+  async remove(id: string) {
     return this.prisma.technologies.delete({
-        where: { id},
-    })
+      where: { id },
+    });
   }
 }

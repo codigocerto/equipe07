@@ -8,24 +8,33 @@ datasource db {
 }
 
 model Candidate {
-  id                     BigInt           @id @default(autoincrement())
+  id                     String           @id @default(uuid())
   name                   String       
   email                  String           @unique 
   phone                  String           @db.VarChar(11)
-  technologies           Technologies[]
+  technologies           Candidate_Technologies[]
   contributionType       Contribution     @default(APPRENTICE)
   isSignIn               Boolean          
   createdAt              DateTime         @default(now())
 }
 
-model Technologies {
-  id                     BigInt           @id @default(autoincrement())
+model Candidate_Technologies {
+  id                     String           @id @default(uuid())
   candidate              Candidate        @relation(fields: [candidateId], references: [id])
-  candidateId            BigInt
-  level                  Level            @default(STARTER)
-  name                   String           @unique
+  candidateId            String
+  technology              Technologies        @relation(fields: [technologyId], references: [id])
+  technologyId            String
 
   @@index([candidateId])
+  @@index([technologyId])
+}
+
+model Technologies {
+  id                     String           @id @default(uuid())
+  level                  Level            @default(STARTER)
+  name                   String           @unique
+  
+  candidates             Candidate_Technologies[]
 }
 
 enum Contribution {
